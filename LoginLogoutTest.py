@@ -7,24 +7,32 @@ from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
 
-class Untitled(unittest.TestCase):
+class Untitled3(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
-        self.base_url = "http://localhost:8080/"
+        self.base_url = "http://localhost:8080"
         self.verificationErrors = []
         self.accept_next_alert = True
 
-    def test_untitled(self):
+    def test_untitled3(self):
         driver = self.driver
-        driver.get(self.base_url + "/litecart/admin/login.php")
-        driver.find_element_by_name("username").clear()
-        driver.find_element_by_name("username").send_keys("admin")
-        driver.find_element_by_name("password").clear()
-        driver.find_element_by_name("password").send_keys("admin")
-        driver.find_element_by_name("login").click()
-        driver.find_element_by_xpath("(//li[@id='app-']/a/span[2])[2]").click()
-        driver.find_element_by_xpath("//td[@id='sidebar']/div[2]/a[5]/i").click()
+        driver.get(self.base_url + "/addressbook/")
+        driver.find_element_by_name("user").clear()
+        driver.find_element_by_name("user").send_keys("admin")
+        driver.find_element_by_name("pass").clear()
+        driver.find_element_by_name("pass").send_keys("secret")
+        driver.find_element_by_css_selector("input[type=\"submit\"]").click()
+        driver.find_element_by_link_text("groups").click()
+        driver.find_element_by_name("new").click()
+        driver.find_element_by_name("group_name").clear()
+        driver.find_element_by_name("group_name").send_keys("sadasd")
+        driver.find_element_by_name("group_header").clear()
+        driver.find_element_by_name("group_header").send_keys("asdasd")
+        driver.find_element_by_name("group_footer").clear()
+        driver.find_element_by_name("group_footer").send_keys("asdasd")
+        driver.find_element_by_name("submit").click()
+        driver.find_element_by_link_text("Logout").click()
 
     def is_element_present(self, how, what):
         try:
