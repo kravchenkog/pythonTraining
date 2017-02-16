@@ -1,6 +1,7 @@
 import pytest
-from app_manager import AppManager
-from group import Group
+
+from fixture.app_manager import AppManager
+from model.group import Group
 
 
 @pytest.fixture

@@ -1,6 +1,7 @@
 import pytest
-from app_manager import AppManager
+
 from contact import Contact
+from fixture.app_manager import AppManager
 
 
 @pytest.fixture
